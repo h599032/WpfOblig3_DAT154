@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfOblig3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfOblig3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="studentList" ItemsSource="{Binding}" Margin="0,52,0,-52" MouseDoubleClick="studentList_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="200" Header="Student" DisplayMemberBinding="{Binding Path=Studentname}" />
+                        <GridViewColumn Width="100" Header="ID" DisplayMemberBinding="{Binding Path=Id}" />
+                        <GridViewColumn Width="100" Header="Age" DisplayMemberBinding="{Binding Path=Studentage}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
+        <TextBox Name="searchField" HorizontalAlignment="Left" Margin="36,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="161,20,0,0" VerticalAlignment="Top" Click="searchButton_Click"/>
+        <Button Name ="showCourses" Content="Courses" HorizontalAlignment="Left" Margin="326,20,0,0" VerticalAlignment="Top" Click="ShowCourses_Click"/>
+        <Button Name="showGrades" Content="Grades" HorizontalAlignment="Left" Margin="408,20,0,0" VerticalAlignment="Top" Click="showGrades_Click"/>
+
+    </Grid>
+</Window>

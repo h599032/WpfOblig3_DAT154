@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfOblig3.GradeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfOblig3"
+        mc:Ignorable="d"
+        Title="GradeWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="selectGrade" ItemsSource="{Binding}"  DisplayMemberPath = "Grade1" SelectedValuePath= "Grade1" HorizontalAlignment="Left" Margin="36,21,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+
+        </ComboBox>
+        <ListView Name="studentList" ItemsSource="{Binding}" Margin="10,58,391,0" >
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="150" Header="Student" DisplayMemberBinding="{Binding Path=Studentname}" />
+                        <GridViewColumn Width="60" Header="Grade" DisplayMemberBinding="{Binding Path=Grade}" />
+                        <GridViewColumn Width="180" Header="Course" DisplayMemberBinding="{Binding Path=Course.Coursename}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Failed Students" HorizontalAlignment="Left" Margin="560,25,0,0" VerticalAlignment="Top"/>
+        <ListView Name="failedStudentList" ItemsSource="{Binding}" Margin="437,58,26,10" >
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="150" Header="Student" DisplayMemberBinding="{Binding Path=Studentname}" />
+                        <GridViewColumn Width="180" Header="Course" DisplayMemberBinding="{Binding Path=Course.Coursename}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

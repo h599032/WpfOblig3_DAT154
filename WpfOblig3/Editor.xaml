@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfOblig3.Editor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfOblig3"
+        mc:Ignorable="d"
+        Title="Editor" Height="326" Width="575">
+    <Grid Margin="0,0,-15,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="365*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Add to a course" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Height="26" Width="162"/>
+        <ComboBox Name="courseList" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="92,158,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
+        <ComboBox Name="gradeList" ItemsSource="{Binding}" DisplayMemberPath = "Grade1" SelectedValuePath= "Grade1" HorizontalAlignment="Left" Margin="152,158,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button Name="addToCourse" Grid.Column="1" Content="Add" HorizontalAlignment="Left" Margin="277,205,0,0" VerticalAlignment="Top" Click="addToCourse_Click" Height="28" Width="42"/>
+            <Label Content="Select course:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top"/>
+            <Label Grid.Column="1" Content="Select grade:" HorizontalAlignment="Left" Margin="74,156,0,0" VerticalAlignment="Top"/>
+            <Label Content="Remove from a course" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox Name="removeCourseList" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="92,41,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
+        <Label Content="Select course:" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top"/>
+        <Button Name="remove" Grid.Column="1" Content="Remove" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Height="25" Width="54" Click="remove_Click"/>
+
+
+    </Grid>
+</Window>
